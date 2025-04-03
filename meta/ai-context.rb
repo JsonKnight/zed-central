@@ -1,9 +1,7 @@
-# ai-context.rb - Project Context Configuration for xtemplate CLI
+# ai-context.rb - Project Context Configuration for Zed Editor
 
-# Project Identity
 PROJ_NAME = "zed-editor"
 
-# Project Metadata
 PROJECT_META = {
   type: 'editor',
   primary_language: 'rust',
@@ -21,7 +19,6 @@ PROJECT_META = {
   }
 }
 
-# Context Generation Settings
 GENERATOR_CONFIG = {
   output_format: 'json',
   max_file_size: 512 * 1024,
@@ -56,7 +53,6 @@ TREE_CONFIG = {
 }
 
 
-# Files to Include
 FILES_FOR_CONTEXT = {
   config_files: [
     'Cargo.toml',
@@ -71,14 +67,12 @@ FILES_FOR_CONTEXT = {
   ]
 }
 
-# MCP Server Configuration
 MCP_CONFIG = {
   watch: true,
   tracked_files: FILES_FOR_CONTEXT,
   debounce_ms: 500
 }
 
-# Project-Specific Extensions
 EXTENSIONS = {
   cli: {
   },
