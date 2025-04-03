@@ -1,0 +1,124 @@
+# -*- mode: gitignore; -*-
+
+## ─────────────────────────────────────────────
+## Editor & OS-Specific Files
+## ─────────────────────────────────────────────
+
+# Emacs backup files
+*~
+\#*\#
+.\#*
+
+# Keep project-specific Emacs files
+!**/.dir-locals.el
+!**/.envrc
+
+# Editor/IDE files
+*.sublime-project
+*.sublime-workspace
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS-generated files
+Thumbs.db
+
+## ─────────────────────────────────────────────
+## Build Directories & Artifacts
+## ─────────────────────────────────────────────
+
+# Ignore build directories
+/.cache/
+/.build/
+/.dist/
+/.ccls-cache/
+
+# Ignore compiled binaries & object files
+*.o
+*.so
+*.dylib
+*.dll
+*.exe
+
+## ─────────────────────────────────────────────
+## Rust Build Artifacts
+## ─────────────────────────────────────────────
+
+/target/
+/debug/
+/Cargo.lock
+.cargo/
+clippy.toml
+rustfmt.toml
+/**/*.rs.bk
+/.rust-analyzer
+
+# Ignore profiling files
+*.profdata
+*.gcda
+
+## ─────────────────────────────────────────────
+## Ruby-Specific Files
+## ─────────────────────────────────────────────
+
+/.ruby-lsp/
+/.ruby-version
+/.bundle/
+/.yardoc
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/
+/vendor/bundle/
+Gemfile.lock
+/.gem
+
+## ─────────────────────────────────────────────
+## Logs & Temporary Files
+## ─────────────────────────────────────────────
+
+logs/
+*.log
+*.logs
+*.log.*
+*.logs.*
+
+# Miscellaneous temp files
+*.swp
+*.tmp
+*.old
+*.orig
+
+## ─────────────────────────────────────────────
+## Archive & Compression Files
+## ─────────────────────────────────────────────
+
+/*.zip
+/*.rar
+/*.tar
+/*.tar.gz
+/*.tar.bz2
+/*.tar.xz
+/*.7z
+/*.gz
+/*.bz2
+/*.xz
+
+## ─────────────────────────────────────────────
+## Project-Specific Ignored Directories
+## ─────────────────────────────────────────────
+
+/__*/
+
+# Ignore local executable builds
+build/
+out/
+

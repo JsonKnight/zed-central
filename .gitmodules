@@ -1,0 +1,9 @@
+[submodule "original"]
+	path = original
+	url = https://github.com/zed-industries/zed
+[submodule "fork"]
+	path = fork
+	url = https://github.com/JsonKnight/zed-fork
+[submodule "chaotic"]
+	path = chaotic
+	url = https://github.com/JsonKnight/zed-fork-chaotic

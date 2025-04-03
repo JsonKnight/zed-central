@@ -1,0 +1,127 @@
+# Universal .rubocop.yml for Rust CLI projects using Ruby for testing (Aruba) and automation (Rake)
+
+plugins:
+  - rubocop-performance
+  - rubocop-rake
+
+AllCops:
+  TargetRubyVersion: 3.0
+  NewCops: enable
+  SuggestExtensions: false
+  Exclude:
+    - "vendor/**/*"
+    - "log/**/*"
+    - "tmp/**/*"
+    - ".git/**/*"
+    - "Gemfile.lock"
+    - "Guardfile"
+    - "bin/**/*"
+
+# ✅ Simple Ruby Scripts (Modules & Classes)
+Layout/ClassStructure:
+  Enabled: true
+  Categories:
+    module_inclusion:
+      - include
+      - extend
+      - prepend
+      - mixin
+    accessors:
+      - attr_accessor
+      - attr_reader
+      - attr_writer
+    constants:
+      - CONSTANTS
+    public_methods: public_methods
+    private_methods: private_methods
+
+Naming/MethodName:
+  EnforcedStyle: snake_case
+
+Naming/ConstantName:
+  Enabled: true
+
+Naming/FileName:
+  Enabled: true
+  Exclude:
+    - "Gemfile"
+    - "Rakefile"
+
+# ✅ CLI Testing (Aruba)
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - "spec/**/*"
+    - "test/**/*"
+
+Lint/DuplicateMethods:
+  Enabled: true
+
+Lint/RaiseException:
+  Enabled: true
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+  EnforcedStyle: always
+
+Metrics/MethodLength:
+  Max: 40
+  Exclude:
+    - "spec/**/*"
+    - "test/**/*"
+
+Metrics/BlockLength:
+  Max: 40
+  Exclude:
+    - "spec/**/*"
+    - "test/**/*"
+
+Metrics/AbcSize:
+  Max: 30
+  Exclude:
+    - "spec/**/*"
+    - "test/**/*"
+
+# ✅ Rake-Specific Rules (for Task Automation)
+Rake/Desc:
+  Enabled: true
+
+Rake/MethodDefinitionInTask:
+  Enabled: true
+
+Rake/MultipleActions:
+  Enabled: true
+
+Rake/TaskDefinition:
+  Enabled: true
+
+# ✅ Performance Optimizations
+Performance/StringReplacement:
+  Enabled: true
+
+Performance/RegexpMatch:
+  Enabled: true
+
+Performance/StartWith:
+  Enabled: true
+
+Performance/EndWith:
+  Enabled: true
+
+Performance/CollectionLiteralInLoop:
+  Enabled: true
+
+Performance/RedundantSortBlock:
+  Enabled: true
+
+# ✅ Bundler Rules
+Bundler/OrderedGems:
+  Enabled: true
+
+Bundler/DuplicatedGem:
+  Enabled: true
+
+Bundler/GemComment:
+  Enabled: false
